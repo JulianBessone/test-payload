@@ -2,11 +2,11 @@ import { buildConfig } from 'payload/config';
 import path from 'path';
 // import Examples from './collections/Examples';
 import Users from './collections/Users';
-import Clientes from './collections/Clientes';
 import Media from './collections/Media';
+import Clientes from './collections/Clientes';
 
 export default buildConfig({
-  serverURL: process.env.PAYLOAD_URL,
+  serverURL: 'http://localhost:3000',
   admin: {
     user: Users.slug,
   },
@@ -14,6 +14,7 @@ export default buildConfig({
     Users,
     Clientes,
     Media,
+
     // Add Collections here
     // Examples,
   ],

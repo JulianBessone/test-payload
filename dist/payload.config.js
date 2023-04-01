@@ -7,10 +7,10 @@ var config_1 = require("payload/config");
 var path_1 = __importDefault(require("path"));
 // import Examples from './collections/Examples';
 var Users_1 = __importDefault(require("./collections/Users"));
-var Clientes_1 = __importDefault(require("./collections/Clientes"));
 var Media_1 = __importDefault(require("./collections/Media"));
+var Clientes_1 = __importDefault(require("./collections/Clientes"));
 exports.default = (0, config_1.buildConfig)({
-    serverURL: process.env.PAYLOAD_URL,
+    serverURL: 'http://localhost:3000',
     admin: {
         user: Users_1.default.slug,
     },

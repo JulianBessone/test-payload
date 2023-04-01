@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var isAdmin_1 = require("../access/isAdmin");
 var Media = {
     slug: 'media',
     upload: {
@@ -25,6 +26,16 @@ var Media = {
         ],
         adminThumbnail: 'thumbnail',
         mimeTypes: ['image/*'],
+    },
+    access: {
+        // Only admins can create users
+        create: isAdmin_1.isAdmin,
+        // Admins can read all, but any other logged in user can only read themselves
+        read: isAdmin_1.isAdmin,
+        // Admins can update all, but any other logged in user can only update themselves
+        update: isAdmin_1.isAdmin,
+        // Only admins can delete
+        delete: isAdmin_1.isAdmin,
     },
     fields: [],
 };

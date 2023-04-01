@@ -1,4 +1,4 @@
-# payload-test
+# payloadtest
 
 This project was created using create-payload-app using the blank template.
 

@@ -1,4 +1,6 @@
 import { CollectionConfig } from 'payload/types';
+import { isAdmin, isAdminFieldLevel } from '../access/isAdmin';
+import { isAdminOrSelf } from '../access/isAdminOrSelf';
 
 const Media: CollectionConfig = {
   slug: 'media',
@@ -25,6 +27,16 @@ const Media: CollectionConfig = {
     ],
     adminThumbnail: 'thumbnail',
     mimeTypes: ['image/*'],
+  },
+  access: {
+    // Only admins can create users
+    create: isAdmin,
+    // Admins can read all, but any other logged in user can only read themselves
+    read: isAdmin,
+    // Admins can update all, but any other logged in user can only update themselves
+    update: isAdmin,
+    // Only admins can delete
+    delete: isAdmin,
   },
   fields: [],
 };

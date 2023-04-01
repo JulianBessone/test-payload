@@ -1,14 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var isAdmin_1 = require("../access/isAdmin");
 var Clientes = {
     slug: 'clientes',
     admin: {
         useAsTitle: 'Nombre',
     },
+    access: {
+        // Only admins can create users
+        create: isAdmin_1.isAdmin,
+        // Only admins can delete
+        delete: isAdmin_1.isAdmin,
+    },
     fields: [
         {
             name: 'Nombre_Legal',
             type: 'text',
+            access: {
+                // Only admins can create or update a value for this field
+                create: isAdmin_1.isAdminFieldLevel,
+                read: isAdmin_1.isAdminFieldLevel,
+                update: isAdmin_1.isAdminFieldLevel,
+            },
         },
         {
             name: 'Nombre',
@@ -17,6 +30,12 @@ var Clientes = {
         {
             name: 'Rubro',
             type: 'text',
+            access: {
+                // Only admins can create or update a value for this field
+                create: isAdmin_1.isAdminFieldLevel,
+                read: isAdmin_1.isAdminFieldLevel,
+                update: isAdmin_1.isAdminFieldLevel,
+            },
         },
         {
             name: 'Calle',
@@ -41,10 +60,22 @@ var Clientes = {
         {
             name: 'Distribuye',
             type: 'text',
+            access: {
+                // Only admins can create or update a value for this field
+                create: isAdmin_1.isAdminFieldLevel,
+                read: isAdmin_1.isAdminFieldLevel,
+                update: isAdmin_1.isAdminFieldLevel,
+            },
         },
         {
             name: 'Cabecera',
             type: 'text',
+            access: {
+                // Only admins can create or update a value for this field
+                create: isAdmin_1.isAdminFieldLevel,
+                read: isAdmin_1.isAdminFieldLevel,
+                update: isAdmin_1.isAdminFieldLevel,
+            },
         },
         {
             name: 'Provincia',
@@ -57,14 +88,32 @@ var Clientes = {
         {
             name: 'Cierre',
             type: 'text',
+            access: {
+                // Only admins can create or update a value for this field
+                create: isAdmin_1.isAdminFieldLevel,
+                read: isAdmin_1.isAdminFieldLevel,
+                update: isAdmin_1.isAdminFieldLevel,
+            },
         },
         {
             name: 'Segmentacion',
             type: 'text',
+            access: {
+                // Only admins can create or update a value for this field
+                create: isAdmin_1.isAdminFieldLevel,
+                read: isAdmin_1.isAdminFieldLevel,
+                update: isAdmin_1.isAdminFieldLevel,
+            },
         },
         {
             name: 'Observaciones',
             type: 'text',
+            access: {
+                // Only admins can create or update a value for this field
+                create: isAdmin_1.isAdminFieldLevel,
+                read: isAdmin_1.isAdminFieldLevel,
+                update: isAdmin_1.isAdminFieldLevel,
+            },
         },
         {
             name: 'imagen1',

@@ -1,14 +1,30 @@
 import { CollectionConfig } from 'payload/types';
+import { isAdmin, isAdminFieldLevel } from '../access/isAdmin';
+import { isAdminOrSelf } from '../access/isAdminOrSelf';
 
 const Clientes:CollectionConfig = {
     slug: 'clientes',
     admin: {
       useAsTitle: 'Nombre',
     },
+    access: {
+        // Only admins can create users
+        create: isAdmin,
+
+        // Only admins can delete
+        delete: isAdmin,
+    },
     fields: [
       {
         name: 'Nombre_Legal',
         type: 'text',
+        access: {
+            // Only admins can create or update a value for this field
+            create: isAdminFieldLevel,
+            read: isAdminFieldLevel,
+            update: isAdminFieldLevel,
+            
+        },
       },
       {
         name: 'Nombre',
@@ -17,6 +33,13 @@ const Clientes:CollectionConfig = {
       {
         name: 'Rubro',
         type: 'text',
+        access: {
+            // Only admins can create or update a value for this field
+            create: isAdminFieldLevel,
+            read: isAdminFieldLevel,
+            update: isAdminFieldLevel,
+            
+        },
       },
       {
         name: 'Calle',
@@ -41,10 +64,24 @@ const Clientes:CollectionConfig = {
       {
         name: 'Distribuye',
         type: 'text',
+        access: {
+            // Only admins can create or update a value for this field
+            create: isAdminFieldLevel,
+            read: isAdminFieldLevel,
+            update: isAdminFieldLevel,
+            
+        },
       },
       {
         name: 'Cabecera',
         type: 'text',
+        access: {
+            // Only admins can create or update a value for this field
+            create: isAdminFieldLevel,
+            read: isAdminFieldLevel,
+            update: isAdminFieldLevel,
+            
+        },
       },
       {
         name: 'Provincia',
@@ -57,14 +94,35 @@ const Clientes:CollectionConfig = {
       {
         name: 'Cierre',
         type: 'text',
+        access: {
+            // Only admins can create or update a value for this field
+            create: isAdminFieldLevel,
+            read: isAdminFieldLevel,
+            update: isAdminFieldLevel,
+            
+        },
       },
       {
         name: 'Segmentacion',
         type: 'text',
+        access: {
+            // Only admins can create or update a value for this field
+            create: isAdminFieldLevel,
+            read: isAdminFieldLevel,
+            update: isAdminFieldLevel,
+            
+        },
       },
       {
         name: 'Observaciones',
         type: 'text',
+        access: {
+            // Only admins can create or update a value for this field
+            create: isAdminFieldLevel,
+            read: isAdminFieldLevel,
+            update: isAdminFieldLevel,
+            
+        },
       },
       {
         name: 'imagen1',
